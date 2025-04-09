@@ -2,7 +2,11 @@
 import bot05
 
 # Create an EC2 client
+<<<<<<< HEAD
 ec2 = boto3.client('cluster')
+=======
+ec2 = boto3.client('instance')
+>>>>>>> f0f3d15db0ad5e94ddab283aa26a330e456f1513
 
 # Create an EC2 instance
 response = ec2.run_instances(
