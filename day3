@@ -1,0 +1,18 @@
+
+import boto3
+
+# Create an EC2 client
+ec2 = boto3.client('ec2')
+
+# Create an EC2 instance
+response = ec2.run_instances(
+    ImageId='ami-xxxxxxxxxxxxxxxxx',  # Replace with your desired AMI ID
+    InstanceType='t2.micro',           # Choose the instance type (e.g., t2.micro)
+    MinCount=1,                        # Number of instances to launch
+    MaxCount=1,                        # Number of instances to launch
+    KeyName='your-key-pair'            # Replace with your key pair name
+)
+
+# Print the instance ID of the created instance
+instance_id = response['Instances'][0]['InstanceId']
+print(f'EC2 Instance created with ID: {instance_id}')
